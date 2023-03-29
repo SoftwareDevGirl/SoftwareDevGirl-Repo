@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--TEST PAGE FOR TESTING ONLY-->
+<!--TEST PAGE FOR TESTING ONLY-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEST PAGE</title>
+    <!--link rel="stylesheet" href="./css/main.css"-->
+    <style>
+        .x-graphic {
+            height: 200px;
+            width: 200x;
+            transition: transform 0.5s ease-in;
+        }
+
+        .btn {
+            width: 90px;
+            height: 30px;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <img class='x-graphic' src="/img/x-graphic.png" alt="TEST IMAGE WAS NOT FOUND" />
+    <p></p>
+    <button class="btn"></button>
+
+
+    <h1 id="gameTitle">Spin X!!!</h1>
+
+
+
+    <script>
+
+const image = document.querySelector('.x-graphic');
+const button = document.querySelector('.btn');
+
+let rotationInterval;
+
+button.addEventListener('click', function() {
+  if (!rotationInterval) {
+    rotationInterval = setInterval(rotate, 1000);
+    button.innerHTML = 'Stop';
+  } else {
+    clearInterval(rotationInterval);
+    rotationInterval = null;
+    button.innerHTML = 'Start';
+  }
+});
+
+function rotate() {
+  image.style.transform = `rotateY('image.style.transform(rotationInterval', '360deg')`;
+}
+
+
+
+
+
+
+        /*
+        var start;
+        var progress;
+        var stopId;
+        const image = document.getElementsByClassName('x-graphic');
+        var toggle = false;
+        var rotation = 0;
+        const speed = 1;
+        for (let i = 0; i < image.length; i++) {
+
+
+            function updateRotation(timestamp) {
+                if (!start || progress > 400) start = timestamp;
+                progress = (timestamp - start); 
+                rotation += speed;
+         
+                    image[i].style.transform = `rotateY(${rotation}deg)`;
+                
+                    stopId = window.requestAnimationFrame(updateRotation());
+              
+            }
+
+        }
+
+        function toggleAnimation() {
+
+            if (!toggle) {
+                toggle = true;
+                window.requestAnimationFrame(updateRotation());
+            } else {
+                toggle = false;
+                cancelAnimationFrame(stopId);
+            }
+
+           
+        }
+
+ 
+ */
+// Start the animation
+
+
+    </script>
+
+</body>
+
+</html>

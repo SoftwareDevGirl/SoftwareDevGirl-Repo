@@ -1,0 +1,209 @@
+/*
+Title: TIC TAC TOE
+Page Title: main.css
+Source code & Original Developer: DCODE - https://github.com/dcode-youtube/tic-tac-toe-vanilla-js/blob/master/index.html
+Developer: WebDevGirl
+Date: 12/31/2022
+*/
+/*box-sizing includes the padding and border in the total width and height 
+of an element*/
+* {
+    box-sizing: border-box;
+}
+/*The background behind the game*/
+body {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: .5em;
+}   
+
+#gameTitle{
+color: white;
+display: flex;
+justify-content: center;
+font-family: monospace;
+font-weight: bold;
+font-size:4em;
+
+}
+/*the entire box div for the game*/
+#app {
+    border: .2em solid white;
+    border-radius: .2em;
+    box-shadow: .2em .2em 4em 1em white;
+    display: flex;
+    flex-direction: column;
+    height: 42em;
+    width: 40em;  
+}
+
+.playerGraphic{
+    position: absolute;
+    width: 2em;
+    height: 2em;
+}
+
+/*The top header of the game, with refresh button, also contains playerTurn element*/
+.header {
+    font-family: monospace;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 5em;
+    background: #222;
+}
+
+/*Container and text that displays what players turn it is*/
+.playerTurn{
+    padding: 12px;
+    flex-grow: 1;
+    text-align: center;
+    color:#9b7bb4;
+    font-size: 3em;
+}
+
+/*The div that contains the progress of the game message at the bottom of the board*/
+.footer {
+    font-family: monospace;
+    font-weight: bold;
+    font-size:2em;
+    padding: .2em;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    background: #222;
+    color:#9b7bb4;
+}
+/*Footer Font - Says Progress of the game*/
+.footer >* {
+    color:#9b7bb4;
+    font-size: 25px;
+}
+/*Creates a new game*/
+.boardRestart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    color:#816796;
+
+}
+/*Displays the game board in a grid of three columns and three rows. */
+.board {
+    display: grid;
+    background: #816796;
+    /*light purple board background*/
+    gap: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    grid-template-columns: repeat(3, 1fr);
+    /*3 columns in the grid*/
+    grid-template-rows: repeat(3, 1fr);
+    /*3 rows in the grid*/
+
+}
+/*The indexes which are the board tiles, that contain the Xs and Os*/
+.boardTile {
+   
+    background: #230435;
+    /*Dark purple board tile*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* to center the tile in the grid space */
+    font-size: 80px;
+    font-weight: bolder;
+    font-family: monospace;
+    cursor: pointer;
+
+}
+/*Changes the color of the tile when the mouse hovers over it*/
+.boardTile:hover {
+
+    background: #8e4c9e;
+}
+/*Changes the color of the text inside of the tile to green, for the winning combo */
+.winningTile {
+    position:absolute;
+    width: 2em;
+    height: 2em;
+    color: green; /*Default color of letters if images don't show up for x and o*/
+}
+
+.winningTile::before{
+    width: 4em;
+    height: 2em;
+    transform: scale(1.0) rotate(100deg);
+    transition: 3s;
+}
+
+.winningTile::after{
+    width: 3em;
+    height: 3em;
+    transform: scale(2.0) rotate(360deg);
+
+}
+
+
+/*animation: rotateTile 6s infinite linear;   
+animation: name duration timing-function delay iteration-count direction fill-mode play-state;*/
+@media screen and (max-width: 290px) {
+    #gameTitle{
+        font-size:2em;
+        margin-top: 2em;
+    }
+    #app{
+        width: 270px;
+        height: 350px;
+        margin-top: 2em;
+        margin:.5em;
+    }
+    .header{
+        height:2.5em;
+    }
+    .playerTurn{
+        font-size: 2em;
+    }
+    .footer{
+        height:2em;
+        font-size: 1.5em;
+    }
+    .boardTile{
+        font-size:2.5em;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    #gameTitle{
+        font-size:3em;
+        margin-top: 2em;
+    }
+    #app{
+        width: 350px;
+        height: 450px;
+        margin-top: 4em;
+        margin:.3em;
+    }
+    .header{
+        height:3em;
+    }
+    .playerTurn{
+        font-size: 2em;
+    }
+    .footer{
+        height:2em;
+        font-size: 1.5em;
+    }
+    .boardTile{
+        font-size:4em;
+    }
+
+
+}
