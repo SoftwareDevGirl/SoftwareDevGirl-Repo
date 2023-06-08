@@ -31,9 +31,9 @@ export default class Game {
         }
         //this board at this index is equal to whoevers turn it is and places an X or an O in the index they click on
         if(this.turn == "X"){
-            this.board[i] = `<img class ="playerGraphic" src="/img/x-graphic.png" alt="X"/>`;
+            this.board[i] = `<img class ="playerGraphic" src="./img/x-graphic.png" alt="X"/>`;
         }else if(this.turn =="O"){
-            this.board[i] = `<img class ="playerGraphic" src="/img/o-graphic.png" alt="O"/>`;
+            this.board[i] = `<img class ="playerGraphic" src="./img/o-graphic.png" alt="O"/>`;
         } 
         
         //after this turn has been taken move to the next players turn.
